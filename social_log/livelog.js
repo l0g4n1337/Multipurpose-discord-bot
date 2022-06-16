@@ -103,7 +103,7 @@ module.exports = async client => {
                if(tempData.roleID_PING && tempData.roleID_PING.length > 2){
                  ch.send({content: `<@&${tempData.roleID_PING}>`}).then(msg=>msg.delete().catch(e=>console.log(` [TWITCH] | ${moment().format("ddd DD-MM-YYYY HH:mm:ss.SSSS")} | ${guild.name} ::  Prevented delete bug`.gray))).catch(e=>console.log(`prevented send bug role`.gray))
                }
-               client.social_log.set(ch.guild.id+`.twitch`, tempDat)
+               client.social_log.set(ch.guild.id+`.twitch`, tempData)
                //console.log(` [TWITCH] | ${moment().format("ddd DD-MM-YYYY HH:mm:ss.SSSS")} | ${guild.name} ::  NOTIFICATION SENT: https://www.twitch.tv/${StreamData.user_login}`.magenta)
                //fs.writeFileSync('./social_log/streamconfig.json', JSON.stringify(tempData, null, 3))
            }).catch(e=>{console.log(` [TWITCH] | ${moment().format("ddd DD-MM-YYYY HH:mm:ss.SSSS")} | ${guild.name} ::  Prevented send bug embed`.gray, e)})
