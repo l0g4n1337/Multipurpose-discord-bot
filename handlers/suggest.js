@@ -167,7 +167,7 @@ module.exports = (client) => {
                   SuggestionsData.voted_ppl.splice(index, 1);
                 }
               }
-              SuggestionsData.upvotes += 1;
+              SuggestionsData.downvotes += 1;
               SuggestionsData.downvoted_ppl.push(button.user.id);
               await client.settings.set(button.message.id, SuggestionsData)
           }
